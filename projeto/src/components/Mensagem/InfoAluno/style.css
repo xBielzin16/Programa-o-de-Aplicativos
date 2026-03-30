@@ -1,0 +1,89 @@
+/* Fonte futurista que lembra tecnologia alienígena */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Tektur:wght@400;700&display=swap');
+
+.info-aluno {
+    background: #000000; /* Fundo preto da jaqueta */
+    border: 3px solid #00ff00; /* Verde neon do Omnitrix */
+    border-radius: 15px;
+    padding: 25px;
+    width: 320px;
+    color: #ffffff;
+    font-family: 'Tektur', sans-serif;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    cursor: pointer;
+}
+
+/* O "10" da jaqueta no fundo */
+.info-aluno::before {
+    content: '10';
+    position: absolute;
+    right: -10px;
+    bottom: -20px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 8rem;
+    color: rgba(0, 255, 0, 0.05); /* Bem sutil no fundo */
+    font-weight: 900;
+    font-style: italic;
+    z-index: 0;
+    transition: 0.5s;
+}
+
+.info-aluno h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: #00ff00;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+.info-aluno p {
+    position: relative;
+    z-index: 1;
+    margin: 12px 0;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+/* --- EFEITOS DE TRANSFORMAÇÃO (HOVER) --- */
+
+.info-aluno:hover {
+    background: #051a05; /* Tom verde escuro ao ativar */
+    border-color: #ffffff; /* O Omnitrix brilha branco ao ser pressionado */
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.6), inset 0 0 15px rgba(0, 255, 0, 0.4);
+    transform: scale(1.03) translateY(-5px);
+}
+
+/* Brilho de "Recarga" ou Seleção de Alien */
+.info-aluno:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 255, 0, 0.15) 0%, transparent 70%);
+    animation: pulse 1.5s infinite;
+}
+
+.info-aluno:hover p {
+    color: #00ff00;
+    text-shadow: 0 0 8px rgba(0, 255, 0, 0.5);
+}
+
+.info-aluno:hover::before {
+    color: rgba(0, 255, 0, 0.15); /* O "10" brilha mais forte */
+    transform: scale(1.1);
+}
+
+/* Animação de pulsação de energia */
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
