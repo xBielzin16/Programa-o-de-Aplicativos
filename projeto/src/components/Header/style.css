@@ -1,0 +1,106 @@
+/* Importando fontes robustas para a estética "Wayne Enterprises" */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+    /* Paleta de Cores solicitada */
+    --bg-lead: #202022;          /* Cinza chumbo fundo */
+    --panel-gotham: #101010;     /* Preto painéis */
+    --text-main: #d1d1d1;        /* Texto principal */
+    --electric-blue: #0066ff;    /* Destaque Tech */
+    --gotham-yellow: #ffcc00;    /* Alertas e Ícones */
+    
+    /* Variáveis de UX */
+    --radius: 8px;
+    --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.6);
+    --neon-blue: 0 0 10px rgba(0, 102, 255, 0.7), 0 0 20px rgba(0, 102, 255, 0.4);
+}
+
+/* Configuração base do Dashboard */
+body {
+    background-color: var(--bg-lead);
+    color: var(--text-main);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- HEADER --- */
+.header {
+    background-color: var(--panel-gotham);
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    border-bottom: 2px solid var(--electric-blue); /* Linha de energia do Batcomputador */
+    box-shadow: var(--shadow-soft);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header div {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    /* Detalhe decorativo que remete a interface HUD */
+    display: flex;
+    align-items: center;
+}
+
+/* Efeito Neon ao passar o mouse no título ou links */
+.header div:hover {
+    color: var(--electric-blue);
+    text-shadow: var(--neon-blue);
+}
+
+/* Simulação de um "Botão Importante" no Header (Amarelo Gotham) */
+.header div::before {
+    content: '';
+    width: 4px;
+    height: 20px;
+    background-color: var(--gotham-yellow);
+    margin-right: 12px;
+    box-shadow: 0 0 5px var(--gotham-yellow);
+}
+
+/* --- ESTILO DE CARD (BAT-COMPUTER SCREEN) --- 
+   Pode ser usado no corpo do seu dashboard */
+.card-bat {
+    background-color: var(--panel-gotham);
+    border: 1px solid rgba(0, 102, 255, 0.2);
+    border-radius: var(--radius);
+    padding: 20px;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card-bat:hover {
+    border-color: var(--electric-blue);
+    transform: translateY(-5px);
+    box-shadow: var(--neon-blue);
+}
+
+/* Estilização para barras de rolagem (Scrollbar) Estilo Gotham */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-lead);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--panel-gotham);
+    border: 1px solid var(--electric-blue);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--electric-blue);
+}

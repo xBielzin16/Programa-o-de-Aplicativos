@@ -1,0 +1,57 @@
+/* style.css */
+
+.footer {
+    background-color: #0d0d0d; /* Preto profundo tático */
+    color: #e0e0e0; /* Cinza claro para legibilidade */
+    padding: 25px 10px;
+    text-align: center;
+    border-top: 4px solid #b30000; /* Linha vermelha "sangue" característica */
+    font-family: 'Orbitron', 'Segoe UI', sans-serif; /* Fonte com toque militar/tech */
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 -5px 20px rgba(179, 0, 0, 0.3); /* Glow vermelho sutil na parte superior */
+}
+
+/* Efeito de "Metal Desgastado" no fundo */
+.footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png'); /* Textura de fibra de carbono/tática */
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    letter-spacing: 1px;
+    text-transform: uppercase; /* Estilo de relatórios táticos */
+    font-weight: 600;
+}
+
+/* Destaque para o SENAI - Bahia */
+.footer p br + text, 
+.footer p {
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+/* Simulação do brilho da máscara do Jason */
+.footer:hover {
+    border-top-color: #ff0000;
+    box-shadow: 0 -5px 25px rgba(255, 0, 0, 0.5);
+}
+
+.footer p:hover {
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.8);
+}
+
+/* Estilização de copyright específica */
+.footer p span {
+    color: #b30000;
+}
